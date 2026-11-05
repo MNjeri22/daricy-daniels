@@ -96,3 +96,4 @@ Add route metadata, canonical URLs, Open Graph, published-page sitemap, robots r
 Each phase is a separate reviewable change with a phase summary and relevant checks. No paid services, production credentials or public commerce launch are implied by repository creation.
 Use environment examples without values, dependency lockfiles, CI type/build checks, a separate staging environment and a rollback procedure. Back up the commerce database and test restore before launch.
 Live checkout requires merchant configuration, tax/shipping decisions, approved policies, email sender setup, inventory data, webhook verification, sandbox payment tests and refund/failure tests.
+

@@ -4,8 +4,8 @@ The requested order is architecture → design system → homepage → shop → 
 | Phase | Deliverable | Acceptance gate | Status |
 | --- | --- | --- | --- |
 | 1 — Architecture | Boundaries, stack decisions, routes, data model, security and delivery strategy | All requested features assigned an owner and phase; commerce invariants explicit | Complete |
-| 2 — Design system | Burgundy/cream/tan tokens, Playfair Display/Montserrat typography, spacing, responsive shell and component showcase | Contrast, keyboard focus, reduced motion, mobile navigation; real component states | Next |
-| 3 — Homepage | Campaign hero, collection feature, signature products, brand statement, editorial, categories, journal and newsletter | Distinct editorial rhythm; mobile crops; responsive images; honest signup behavior | Pending |
+| 2 — Design system | Burgundy/cream/tan tokens, Playfair Display/Montserrat typography, spacing, responsive shell and component showcase | Contrast, keyboard focus, reduced motion, mobile navigation; real component states | Complete |
+| 3 — Homepage | Campaign hero, collection feature, signature products, brand statement, editorial, categories, journal and newsletter | Distinct editorial rhythm; mobile crops; responsive images; honest signup behavior | Next |
 | 4 — Shop | Dynamic categories/collections, search, filters, sorting, pagination, wishlist and quick view | URL-preserved state, empty/loading/error results, accessible mobile filters | Pending |
 | 5 — Product page | Gallery, zoom, variant stock, size guide, quantity, add-to-cart, details and recommendations | Correct variant selection; unavailable combinations blocked; keyboard and mobile gallery checks | Pending |
 | 6 — Cart / checkout | Drawer/full cart, quantity/remove/save, shipping/promo display, guest details, billing/shipping, order review and provider boundary | Persisted cart, recoverable errors, no fake payment success; sandbox flow when configured | Pending |
@@ -31,3 +31,4 @@ Only Playfair Display and Montserrat. Dominant burgundy supported by cream and t
 - Merchant/payment account, commerce/CMS hosting, customer authentication, sender domain and production domain.
 
 Do not block architecture and design work on launch inputs. Do not invent them or silently activate paid accounts.
+

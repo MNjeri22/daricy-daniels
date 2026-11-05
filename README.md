@@ -2,11 +2,11 @@
 
 Luxury contemporary fashion ecommerce, built in seven reviewable phases.
 
-**Current milestone: Phase 1 — Architecture complete.** The storefront and backend are not implemented yet.
+**Current milestone: Phase 2 — Design system complete.** The private component showcase is implemented; shopping and backend integration follow in later phases.
 
 1. Architecture — complete; see [architecture](docs/01-architecture.md).
-2. Design system — next.
-3. Homepage.
+2. Design system — complete; see [design system](docs/03-design-system.md).
+3. Homepage — next.
 4. Shop.
 5. Product page.
 6. Cart / checkout.
@@ -25,3 +25,4 @@ TypeScript storefront, reusable design components, provider adapters, a commerce
 ## Development rules
 
 Implement one phase at a time, commit separately, and document validation. Keep sample data explicit. Never commit secrets or real customer data. Live payment, tax, shipping, email and inventory require configured services and staging verification.
+
