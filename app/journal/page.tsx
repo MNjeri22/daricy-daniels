@@ -1,0 +1,4 @@
+import { SimpleHeader, Footer, Icon } from '@/components/storefront/home-page';
+import { stories } from '@/lib/storefront-content';
+export const metadata={title:'The journal'};
+export default function Journal(){return <><SimpleHeader/><main className="editorial-page"><p className="eyebrow">NOTES FROM OUR WORLD</p><h1>The journal.</h1><p className="lead">On identity, expression, and the details that make a silhouette memorable.</p><div className="journal-grid">{stories.map(s=><a href={`/journal/${s.slug}`} className="journal-card" key={s.slug}><div className="journal-image"><img src={`/assets/${s.image}-concept.webp`} width="1536" height="1024" alt={`${s.category}, concept editorial image`}/></div><p className="eyebrow">{s.category}</p><div className="journal-title-row"><h2>{s.title}</h2><Icon name="arrow"/></div><p>{s.excerpt}</p></a>)}</div><p className="concept-note">Editorial preview · AI-generated concept imagery.</p></main><Footer/></>;}

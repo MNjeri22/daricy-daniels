@@ -1,0 +1,2 @@
+import { SimpleHeader, Footer } from '@/components/storefront/home-page';
+export default function NotFound(){return <><SimpleHeader/><main className="editorial-page"><p className="eyebrow">A DIFFERENT DIRECTION</p><h1>A little off the path.</h1><p className="lead">We couldn’t find this page. Discover something memorable in our world.</p><a className="button" href="/">Return to the collection</a></main><Footer/></>;}
