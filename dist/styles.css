@@ -4,3 +4,6 @@
 
 /* Supplied brand logo: original raster, native proportions, no recoloring. */
 .wordmark{display:inline-flex;align-items:center;gap:12px}.brand-logo{width:32px;height:auto;flex:none;mix-blend-mode:multiply}.hero-art{background:var(--surface);color:var(--primary)}.hero-art:before{border-color:var(--border)}.hero-art:after{border-color:var(--border)}.hero-logo{width:57%;height:auto;max-height:65%;object-fit:contain;mix-blend-mode:multiply;position:relative;z-index:1}.footer .brand-logo{width:25px}@media(max-width:700px){.wordmark{gap:9px;font-size:13px;letter-spacing:.13em}.brand-logo{width:26px}.hero-logo{width:53%;max-height:245px}.menu-panel .wordmark{font-size:12px}}
+
+/* Burgundy identity panel restored; clean transparent mark rendered in cream. */
+.hero-art{background:var(--primary);color:var(--on-primary)}.hero-art:before{border-color:#f8f4ed33}.hero-art:after{border-color:#f8f4ed2e}.hero-logo{display:block;width:66%;height:auto;aspect-ratio:1;max-height:none;max-width:440px;background:var(--on-primary);mask:url(assets/daricy-daniels-logo-clean.png) center/contain no-repeat;-webkit-mask:url(assets/daricy-daniels-logo-clean.png) center/contain no-repeat;mix-blend-mode:normal}.brand-logo{mix-blend-mode:normal}@media(max-width:700px){.hero-logo{width:64%;max-height:none;max-width:270px}}

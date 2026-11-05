@@ -38,7 +38,7 @@ Layouts stack at 700px; secondary adjustment at 1000px. Controls remain at least
 - Native dialogs, Escape dismissal, focus containment/return, backdrop dismissal.
 - Polite live-region toast; prefers-reduced-motion CSS.
 
-The supplied Daricy Daniels logo replaces the exploratory DD monogram in the header, identity panel, mobile menu, footer and favicon. The original PNG is retained byte-for-byte in dist/assets/daricy-daniels-logo.png, with its proportions preserved. CSS multiply blending integrates its white background with the cream canvas; the source file is not edited or recolored. The material panel remains an exploratory CSS study, not a product photograph. Product prices and measurements remain TBC; sample availability is labeled. Sample form data stays in memory and is not transmitted or persisted.
+The supplied Daricy Daniels logo replaces the exploratory DD monogram in the header, identity panel, mobile menu, footer and favicon. The original PNG is retained byte-for-byte in dist/assets/daricy-daniels-logo.png, with its proportions preserved. The original source remains unchanged; see the logo clarity correction below for the current presentation asset and burgundy treatment. The material panel remains an exploratory CSS study, not a product photograph. Product prices and measurements remain TBC; sample availability is labeled. Sample form data stays in memory and is not transmitted or persisted.
 
 ## Validation performed
 - JavaScript syntax check.
@@ -54,3 +54,6 @@ This is targeted verification, not a full WCAG audit or multi-browser certificat
 ## Next
 Phase 3: build the homepage with this visual language, a typed reusable storefront shell, campaign imagery and the editorial sequence. Preserve this lab under /design-system when the homepage takes over the root.
 
+
+## Logo clarity correction
+Restored the burgundy identity panel after owner feedback. The original uploaded 237 × 253 PNG remains unchanged as a reference. A generated transparent high-resolution cleanup is stored separately as daricy-daniels-logo-clean.png and used for presentation; this is an AI-assisted reconstruction rather than the original vector artwork. The hero uses a cream CSS alpha mask over burgundy; smaller placements use the black transparent image. Replace the reconstruction with original SVG artwork when available for exact brand fidelity.
