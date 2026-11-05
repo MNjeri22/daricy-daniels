@@ -38,7 +38,7 @@ Layouts stack at 700px; secondary adjustment at 1000px. Controls remain at least
 - Native dialogs, Escape dismissal, focus containment/return, backdrop dismissal.
 - Polite live-region toast; prefers-reduced-motion CSS.
 
-The DD monogram and material panel are exploratory CSS studies, not an approved trademark asset or product photograph. Product prices and measurements remain TBC; sample availability is labeled. Sample form data stays in memory and is not transmitted or persisted.
+The supplied Daricy Daniels logo replaces the exploratory DD monogram in the header, identity panel, mobile menu, footer and favicon. The original PNG is retained byte-for-byte in dist/assets/daricy-daniels-logo.png, with its proportions preserved. CSS multiply blending integrates its white background with the cream canvas; the source file is not edited or recolored. The material panel remains an exploratory CSS study, not a product photograph. Product prices and measurements remain TBC; sample availability is labeled. Sample form data stays in memory and is not transmitted or persisted.
 
 ## Validation performed
 - JavaScript syntax check.
