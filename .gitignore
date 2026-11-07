@@ -54,3 +54,5 @@ yarn-error.log*
 
 # Safe configuration template only; never commit actual secrets.
 !.env.example
+
+/pages-dist/
