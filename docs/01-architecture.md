@@ -1,11 +1,11 @@
 # Phase 1 — Architecture
-Status: architecture defined; implementation has not started.
+Status: storefront phases 1–6 implemented. Phase 7 foundation is implemented; external commerce activation and live acceptance gates remain pending.
 
 ## Product and experience
 DARICY DANIELS is a luxury contemporary fashion storefront. The journey is landing → editorial discovery → filtered collection → product confidence → cart → checkout → confirmation → retention. Desktop uses restrained editorial compositions; mobile has its own image crops, accessible navigation, two-column browsing, and reachable purchase controls.
 
 ## Technology decision
-Use Next.js with TypeScript for the customer storefront, CSS custom properties and CSS Modules for the visual system, PostgreSQL for durable commerce records, and Stripe Checkout for hosted card collection. Use a maintained commerce engine (Medusa) for products, variant inventory, carts, promotions, orders, customers and admin. Use a headless CMS (Sanity) for editorial content. These are implementation choices, not connected or provisioned services. Verify supported package versions and hosting compatibility before scaffolding.
+Use Next.js with TypeScript for the customer storefront, CSS custom properties and CSS Modules for the visual system, PostgreSQL for durable commerce records, and Stripe Checkout for hosted card collection. Use a maintained commerce engine (Medusa) for products, variant inventory, carts, promotions, orders, customers and admin. Use a headless CMS (Sanity) for editorial content. The private Site uses managed identity and D1 for saved account edits/request controls; transactional commerce remains assigned to Medusa/PostgreSQL. These are implementation choices, not connected or provisioned services. Verify supported package versions and hosting compatibility before scaffolding.
 
 This gives the owner a commerce admin and editorial studio without building custom administrative authentication and order-management tools from scratch. Keep CMS content separate from transactional inventory. The storefront communicates through server-side adapters; public product data may be cached, personal data and checkout may not. Stripe receives card details directly; the application never stores card numbers.
 
