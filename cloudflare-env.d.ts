@@ -1,6 +1,9 @@
 declare namespace Cloudflare {
   interface Env {
     DB?: D1Database;
+    CUSTOMER_APP_ORIGIN?: string;
+    RESEND_API_KEY?: string;
+    CUSTOMER_EMAIL_FROM?: string;
     MEDUSA_BACKEND_URL?: string;
     MEDUSA_PUBLISHABLE_KEY?: string;
     STORE_OWNER_EMAIL?: string;
