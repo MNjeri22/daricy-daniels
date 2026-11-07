@@ -12,7 +12,8 @@ export function readBag(value:unknown,items:Product[]):BagLine[]{
 export function addSampleLine(lines:BagLine[],product:Product,color:string,size:string,quantity:number):BagLine[]{
  if(!validQuantity(quantity)||!selectedVariant(product,color,size)?.available)throw new Error('Choose an available color and size, and a quantity from 1 to 5.');
  const existing=lines.find(l=>l.productId===product.id&&l.color===color&&l.size===size);
- if((existing?.quantity||0)+quantity>5)throw new Error('The preview allows up to 5 of each size and color in your bag.');
+ const limit=Math.min(5,selectedVariant(product,color,size)?.stockQuantity??5);
+ if((existing?.quantity||0)+quantity>limit)throw new Error(`Only ${limit} of this size and color can currently be added to your bag.`);
  return existing?lines.map(l=>l===existing?{...l,quantity:l.quantity+quantity}:l):[...lines,{productId:product.id,color,size,quantity}];
 }
 export function recommendations(product:Product,items:Product[],completeLook=false){return items.filter(p=>p.id!==product.id&&(!completeLook||p.category!==product.category)).sort((a,b)=>Number(b.variants.some(v=>v.available))-Number(a.variants.some(v=>v.available))||Number(b.collection===product.collection)-Number(a.collection===product.collection)||Number(b.category===product.category)-Number(a.category===product.category)||a.rank-b.rank).slice(0,3);}

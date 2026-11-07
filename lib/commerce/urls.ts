@@ -1,0 +1,2 @@
+export function storePath(value:string,base=''){if(!value.startsWith('/')||value.startsWith('//'))return value;const prefix=base.replace(/\/$/,'');return prefix&&(value===prefix||value.startsWith(prefix+'/'))?value:prefix+value;}
+export function currentStorePath(value:string){const base=typeof document==='undefined'?'':document.querySelector<HTMLMetaElement>('meta[name="dd-base-path"]')?.content||'';return storePath(value,base);}
