@@ -39,3 +39,8 @@ Country choices: Kenya, USA and UK. Display currencies: KES, USD and GBP, rememb
 ## Customer accounts
 
 The GitHub application now has a separate customer sign-in at `/account/login`, registration, password reset, order history and saved addresses for Kenya, USA and UK. Burgundy branding is retained. See [customer accounts and activation setup](docs/09-customer-accounts.md). Runtime origin, D1 migrations and a verified reset-email sender must be configured on the standalone deployment. Order history starts empty until verified commerce orders are connected. The private hosted Site is not updated by this change.
+
+
+## GitHub Pages design preview
+
+A separate static edition reuses the storefront design and sample catalog for GitHub Pages. Run `npm run build:pages`; see [Pages publishing and limitations](docs/10-github-pages.md). The full application retains its server-backed customer account and checkout implementation. Pages shows a clear unavailable message for backend-dependent features and accepts no purchases or account credentials.
