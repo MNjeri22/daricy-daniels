@@ -31,3 +31,11 @@ export interface CheckoutProvider{prepare(input?:{bag:BagLine[];currency:Currenc
 export const checkoutProvider:CheckoutProvider={async prepare(input){if(!input)return {ok:false,code:'PROVIDER_NOT_CONFIGURED',message:'Payment is not connected yet. No order was placed and no payment was collected. Your sample bag is unchanged.'};try{const response=await fetch('/api/backend/quote',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(input)}),body=await response.json() as {error?:string;message?:string};if(!response.ok)return {ok:false,code:'SERVER_UNAVAILABLE',message:body.error||'The server could not validate checkout. Please try again.'};return {ok:false,code:'PREVIEW_ONLY',message:body.message||'The server checked your sample selection. Purchasing is not enabled.'};}catch{return {ok:false,code:'SERVER_UNAVAILABLE',message:'The server could not be reached. Your bag is unchanged. Please try again.'};}}};
 
 export function displayQuote(lines:BagLine[],items:Product[],method:ShippingMethod,promo:string,currency:Currency){const base=sampleQuote(lines,items,method,promo);const subtotal=lines.reduce((sum,line)=>sum+convertMinor(items.find(p=>p.id===line.productId)!.price,currency)*line.quantity,0),discount=normalizePromo(promo)?Math.round(subtotal*.1):0,shipping=convertMinor(base.shipping,currency);return {subtotal,discount,shipping,estimatedTotal:subtotal-discount+shipping,currency,tax:null};}
+
+// Applying a saved address copies only checkout fields; account IDs and labels never enter
+// the shipping payload. Billing, delivery choice and currency preferences stay independent.
+export function applySavedAddress(details:GuestDetails,saved:Address,email:string):GuestDetails{
+ const shipping={} as Address;for(const key of Object.keys(emptyAddress) as (keyof Address)[]){if(typeof saved[key]!=='string')throw new Error('This saved address is incomplete. Edit it in your account.');shipping[key]=saved[key].trim();}
+ if(Object.keys(validateAddress(shipping,'shipping')).length||!/^\S+@\S+\.\S+$/.test(email)||email.length>254)throw new Error('This saved address is incomplete. Edit it in your account.');
+ return {...details,email,shipping};
+}
