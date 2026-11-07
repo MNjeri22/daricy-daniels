@@ -1,0 +1,1 @@
+export default function Loading(){return <main className="editorial-page" aria-busy="true"><p className="eyebrow">DARICY DANIELS</p><h1>A moment of<br/><em>discovery.</em></h1><p className="lead" role="status">Gathering your edit…</p></main>;}
