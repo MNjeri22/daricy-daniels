@@ -2,13 +2,13 @@
 
 Luxury contemporary fashion ecommerce, built in seven reviewable phases.
 
-**Current milestone: Phase 3 — Homepage complete.** The responsive editorial storefront and linked brand/journal/care pages are implemented. Shop, product, checkout and backend phases follow.
+**Current milestone: Phase 4 — Shop complete.** The shop, collection/category routes, filters, search, sorting, quick view and saved pieces are implemented with sample catalog data. Product detail, checkout and backend phases follow.
 
 1. Architecture — complete; see [architecture](docs/01-architecture.md).
 2. Design system — complete; see [design system](docs/03-design-system.md).
 3. Homepage — complete; see [homepage handoff](docs/04-homepage.md).
-4. Shop — next.
-5. Product page.
+4. Shop — complete; see [shop handoff](docs/05-shop.md).
+5. Product page — next.
 6. Cart / checkout.
 7. Backend.
 
@@ -30,3 +30,5 @@ Implement one phase at a time, commit separately, and document validation. Keep 
 ## Run locally
 
 Use Node >=22.13 and the supplied lockfile. Run `npm ci`, `npm run dev`, `npx tsc --noEmit`, and `npm run build`. The homepage uses the Next.js App Router API through Vinext for the Sites Worker runtime. The standalone design lab is retained at `/design-system/index.html`.
+
+Catalog domain checks: `node --experimental-strip-types --test tests/catalog.test.ts`.
