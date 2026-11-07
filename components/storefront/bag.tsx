@@ -1,6 +1,8 @@
 'use client';
+import {useStoreCatalog} from './catalog-context';
+import {LiveBagContents} from './live-bag';
 import {useState} from 'react';
-import {products,colors} from '@/lib/commerce/catalog';
+import {colors} from '@/lib/commerce/catalog';
 import {lineKey,sampleQuote,displayQuote,sampleShipping,type ShippingMethod} from '@/lib/commerce/checkout';
 import type {BagLine} from '@/lib/commerce/product';
 import {WISHLIST_KEY} from './use-wishlist';
@@ -9,7 +11,9 @@ import {ProductImage} from './shop';
 import {Icon} from './home-page';
 import {useCurrency} from './currency';
 import './checkout.css';
-export function BagContents({compact=false}:{compact?:boolean}){
+export function BagContents(props:{compact?:boolean}){const {mode}=useStoreCatalog();return mode==='live'?<LiveBagContents {...props}/>:<PreviewBagContents {...props}/>;}
+function PreviewBagContents({compact=false}:{compact?:boolean}){
+ const {items:products}=useStoreCatalog();
  const {currency,money,format}=useCurrency();
  const bag=useSampleBag(),[error,setError]=useState(''),[notice,setNotice]=useState(''),[removed,setRemoved]=useState<BagLine|null>(null),[promoInput,setPromoInput]=useState(''),[promo,setPromo]=useState(''),[promoError,setPromoError]=useState(''),[method,setMethod]=useState<ShippingMethod>('standard');
  const quote=displayQuote(bag.lines,products,method,promo,currency);
