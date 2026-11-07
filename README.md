@@ -31,4 +31,6 @@ Implement one phase at a time, commit separately, and document validation. Keep 
 
 Use Node >=22.13 and the supplied lockfile. Run `npm ci`, `npm run dev`, `npx tsc --noEmit`, and `npm run build`. The homepage uses the Next.js App Router API through Vinext for the Sites Worker runtime. The standalone design lab is retained at `/design-system/index.html`.
 
-Catalog domain checks: `node --experimental-strip-types --test tests/catalog.test.ts tests/product.test.ts tests/checkout.test.ts`.
+Catalog domain checks: `node --experimental-strip-types --test tests/catalog.test.ts tests/product.test.ts tests/checkout.test.ts tests/currency.test.ts`.
+
+Country choices: Kenya, USA and UK. Display currencies: KES, USD and GBP, remembered in this browser independently of the selected country. Converted sample prices use a clearly dated reference snapshot; live settlement prices and country-specific delivery rates remain part of the backend phase.
