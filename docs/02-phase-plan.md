@@ -7,8 +7,8 @@ The requested order is architecture → design system → homepage → shop → 
 | 2 — Design system | Burgundy/cream/tan tokens, Playfair Display/Montserrat typography, spacing, responsive shell and component showcase | Contrast, keyboard focus, reduced motion, mobile navigation; real component states | Complete |
 | 3 — Homepage | Campaign hero, collection feature, signature products, brand statement, editorial, categories, journal and newsletter | Distinct editorial rhythm; mobile crops; responsive images; honest signup behavior | Complete |
 | 4 — Shop | Dynamic categories/collections, search, filters, sorting, pagination, wishlist and quick view | URL-preserved state, empty/loading/error results, accessible mobile filters | Complete |
-| 5 — Product page | Gallery, zoom, variant stock, size guide, quantity, add-to-cart, details and recommendations | Correct variant selection; unavailable combinations blocked; keyboard and mobile gallery checks | Next |
-| 6 — Cart / checkout | Drawer/full cart, quantity/remove/save, shipping/promo display, guest details, billing/shipping, order review and provider boundary | Persisted cart, recoverable errors, no fake payment success; sandbox flow when configured | Pending |
+| 5 — Product page | Gallery, zoom, variant stock, size guide, quantity, add-to-cart, details and recommendations | Correct variant selection; unavailable combinations blocked; keyboard and mobile gallery checks | Complete |
+| 6 — Cart / checkout | Drawer/full cart, quantity/remove/save, shipping/promo display, guest details, billing/shipping, order review and provider boundary | Persisted cart, recoverable errors, no fake payment success; sandbox flow when configured | Next |
 | 7 — Backend | Medusa/PostgreSQL adapter, Stripe integration, customer auth, admin, CMS, email and analytics | Inventory concurrency, signed/idempotent webhooks, ownership tests, full staging purchase/refund/failure journey | Pending |
 
 ## Related pages
@@ -32,3 +32,5 @@ Only Playfair Display and Montserrat. Dominant burgundy supported by cream and t
 
 Do not block architecture and design work on launch inputs. Do not invent them or silently activate paid accounts.
 
+
+- Phase 5: [Product page handoff](06-product-page.md).
