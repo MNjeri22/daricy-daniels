@@ -51,7 +51,7 @@ export function filterProducts(items:Product[],filters:Filters,context:CatalogCo
 }
 export const PAGE_SIZE=6;
 export function paginate(items:Product[],requested:number){const pages=Math.max(1,Math.ceil(items.length/PAGE_SIZE));const page=Math.min(Math.max(1,requested),pages);return {items:items.slice((page-1)*PAGE_SIZE,page*PAGE_SIZE),pages,page};}
-export function money(amount:number){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(amount/100);}
+export function money(amount:number){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:amount%100===0?0:2,maximumFractionDigits:2}).format(amount/100);}
 export interface CatalogProvider { list():Promise<Product[]>; }
 // Swap only this adapter for the commerce service in Phase 7.
 export const fixtureCatalog:CatalogProvider={async list(){return products;}};
