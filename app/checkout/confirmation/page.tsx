@@ -1,0 +1,4 @@
+import {Brand,Icon} from '@/components/storefront/home-page';
+import '@/components/storefront/checkout.css';
+export const metadata={title:'Order confirmation',alternates:{canonical:'/checkout/confirmation'}};
+export default function Page(){return <><header className="checkout-header"><Brand light/><a href="/cart">Return to bag <Icon name="bag"/></a></header><main id="main" className="confirmation-main"><p className="eyebrow">DARICY DANIELS / ORDER STATUS</p><h1>A confirmation<br/><em>is still to come.</em></h1><p>No order has been placed in this preview. There is no payment, order number, confirmation email or shipment to track.</p><p>Your sample bag remains available. Once live checkout is connected, this space will show a verified order summary.</p><a className="button" href="/cart">Return to your bag <Icon name="arrow"/></a></main></>;}
