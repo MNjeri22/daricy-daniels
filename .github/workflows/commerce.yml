@@ -6,6 +6,9 @@ on:
     paths: ['commerce-backend/**', 'lib/server/commerce.ts', 'lib/server/core.ts', 'lib/commerce/**', '.github/workflows/commerce.yml']
 permissions:
   contents: read
+concurrency:
+  group: commerce-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   commerce:
     runs-on: ubuntu-latest
