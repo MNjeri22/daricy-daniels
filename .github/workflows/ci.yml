@@ -12,5 +12,6 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci --no-audit --no-fund
+      - run: node --experimental-strip-types --test tests/catalog.test.ts
       - run: npx tsc --noEmit
       - run: npm run build
