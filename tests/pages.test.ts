@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {pagesUrl,pagesProps} from '../pages-preview/paths.mjs';
+test('Pages URLs preserve external links, queries, anchors and existing prefixes',()=>{const base='/daricy-daniels/';assert.equal(pagesUrl('/shop?q=cream#results',base),'/daricy-daniels/shop?q=cream#results');assert.equal(pagesUrl('/',base),'/daricy-daniels/');for(const url of ['https://example.invalid/x','mailto:store@example.invalid','#main','//example.invalid/x','/daricy-daniels/shop'])assert.equal(pagesUrl(url,base),url);});
+test('Pages rewrites only DOM URL attributes and every responsive image source without mutating shared catalog props',()=>{const props={src:'/assets/p.webp',srcSet:'/assets/a.webp 900w, /assets/b.webp 1536w',alt:'Sample'};const result=pagesProps('img',props,'/daricy-daniels/');assert.equal(result.src,'/daricy-daniels/assets/p.webp');assert.equal(result.srcSet,'/daricy-daniels/assets/a.webp 900w, /daricy-daniels/assets/b.webp 1536w');assert.equal(props.src,'/assets/p.webp');assert.equal(pagesProps(()=>null,props,'/daricy-daniels/'),props);});
