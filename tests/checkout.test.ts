@@ -1,3 +1,4 @@
+import {applySavedAddress} from '../lib/commerce/checkout.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {products,money} from '../lib/commerce/catalog.ts';
@@ -14,3 +15,16 @@ test('separate billing must be complete; matching billing needs no duplicate add
 test('unconfigured payment provider cannot claim an order or payment success',async()=>{const result=await checkoutProvider.prepare();assert.equal(result.ok,false);assert.equal(result.code,'PROVIDER_NOT_CONFIGURED');assert.match(result.message,/No order was placed/);assert.equal('orderId' in result,false);assert.equal('redirectUrl' in result,false);});
 
 test('fractional dollar discounts and totals remain visible to the cent',()=>{const q=sampleQuote([{productId:'arc-bag',color:'burgundy',size:'One size',quantity:1}],products,'standard','PREVIEW10');assert.equal(q.discount,2750);assert.equal(money(q.discount),'$27.50');assert.equal(money(q.estimatedTotal),'$259.50');});
+
+test('saved address selection copies only shipping/contact fields and preserves independent billing and delivery',()=>{
+ const billing={...emptyAddress,firstName:'Billing',country:'GB',postalCode:'SW1A 1AA'};
+ const original={email:'guest@example.invalid',shipping:{...emptyAddress},billingSame:false,billing,method:'express' as const};
+ const saved={...emptyAddress,id:'owned-address',label:'Home',firstName:' Sample ',lastName:'Customer',line1:'10 Sample Street',city:'Nairobi',region:'Nairobi',postalCode:'00100',country:'KE'};
+ const result=applySavedAddress(original,saved,'customer@example.invalid');
+ assert.equal(result.email,'customer@example.invalid');assert.equal(result.shipping.country,'KE');assert.equal(result.shipping.firstName,'Sample');assert.equal('id' in result.shipping,false);assert.equal('label' in result.shipping,false);assert.deepEqual(result.billing,billing);assert.equal(result.billingSame,false);assert.equal(result.method,'express');assert.equal(original.email,'guest@example.invalid');assert.equal(original.shipping.firstName,'');assert.equal(saved.firstName,' Sample ');
+ result.shipping.line1='Checkout-only edit';assert.equal(saved.line1,'10 Sample Street');
+});
+test('saved-address application rejects incomplete addresses and preserves checkout state on failure',()=>{
+ const details={email:'guest@example.invalid',shipping:{...emptyAddress},billingSame:true,billing:{...emptyAddress},method:'standard' as const};const before=JSON.stringify(details);
+ assert.throws(()=>applySavedAddress(details,{...emptyAddress,country:'FR'},'customer@example.invalid'));assert.throws(()=>applySavedAddress(details,{...emptyAddress,firstName:'A',lastName:'B',line1:'10 Sample Street',city:'London',region:'',country:'GB',postalCode:'SW1A 1AA'},'invalid'));assert.equal(JSON.stringify(details),before);
+});

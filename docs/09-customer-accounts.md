@@ -24,7 +24,7 @@ Reset tokens are random 256-bit secrets stored only as digests, expire after 30 
 
 ## Orders and checkout boundary
 
-The order-history read path and database are implemented, including customer ownership. New accounts show a real empty state. There are no fabricated orders and no browser endpoint that creates an order or sets its price/status. A future trusted commerce/payment reconciliation service must write verified `customer_orders` snapshots using the authenticated customer ID captured at order creation. Neither commerce nor payment activation is included. Guest checkout remains a sample preview; saved addresses are managed in the account and do not make checkout live.
+The order-history read path and database are implemented, including customer ownership. New accounts show a real empty state. There are no fabricated orders and no browser endpoint that creates an order or sets its price/status. A future trusted commerce/payment reconciliation service must write verified `customer_orders` snapshots using the authenticated customer ID captured at order creation. Neither commerce nor payment activation is included. Guest checkout remains a sample preview; signed-in customers can explicitly apply a saved address to checkout. The current session and owned address are refreshed before applying. Checkout edits never overwrite the saved address, billing details remain independent, and account failures leave manual guest entry available. This does not make checkout live.
 
 Order snapshot payload: `{id, number, placedAt (ISO), status, currency (KES|USD|GBP), totalMinor (integer), items: [{name, quantity, variant}]}`. Never store card details. The API returns the latest 100 owned orders, in reverse chronological order.
 
@@ -33,3 +33,8 @@ Order snapshot payload: `{id, number, placedAt (ISO), status, currency (KES|USD|
 `npm test` runs 45 tests, including nine customer-account tests using real SQLite migrations and a captured reset-mail transport. Coverage includes hashing, registration/login/logout, cookie flags, invalid/expired/forged sessions, CSRF, throttling, reset expiry/replay/concurrency and global session revocation, replaced reset links, absent mail configuration, Resend request construction, address CRUD/ownership/limits/country validation, and empty/owned order history with no public order mutation.
 
 TypeScript and the production Worker build also pass. Local browser QA verifies registration, authenticated overview, persisted address management, empty order history, sign-out and sign-in, and honest unavailable reset email. Real email delivery and production deployment require the configuration above.
+
+
+## Checkout connection
+
+The account panel in checkout loads the current customer and their saved addresses with private, uncached requests. Applying an address is an explicit action; it never silently overwrites typed contact or shipping fields. A changed session or deleted address cancels application with a recoverable message. Manual entry remains available throughout. Two additional domain tests cover address copying, excluded account metadata, preserved billing/delivery state, validation and non-mutation. The suite now contains 47 tests.
