@@ -1,5 +1,6 @@
 /// <reference types="vite/client" />
 import {createRoot} from 'react-dom/client';
+import {AccountPreview} from './account';
 import {HomePage,Footer,SimpleHeader} from '@/components/storefront/home-page';
 import {StoreHeader} from '@/components/storefront/store-header';
 import {CurrencyProvider} from '@/components/storefront/currency';
@@ -19,6 +20,10 @@ function Shell({children}:{children:React.ReactNode}){return <><StoreHeader/><ma
 function App(){
  if(path==='/')return <HomePage/>;
  if(path==='/about')return <About/>;if(path==='/collections')return <Collections/>;if(path==='/journal')return <Journal/>;if(path==='/size-guide')return <SizeGuide/>;if(path==='/cart')return <Cart/>;
+ if(path==='/account'||path==='/account/login')return <AccountPreview/>;
+ if(path==='/account/register')return <AccountPreview view="register"/>;
+ if(path==='/account/forgot-password')return <AccountPreview view="forgot-password"/>;
+ if(path==='/account/reset-password')return <AccountPreview view="reset-password"/>;
  if(path==='/checkout'||path.startsWith('/checkout/')||path==='/account'||path.startsWith('/account/')||path==='/studio'||path.startsWith('/studio/'))return <Shell><p className="eyebrow">GITHUB PAGES / DESIGN PREVIEW</p><h1>{path.startsWith('/checkout')?'Checkout preview.':'Your customer account.'}</h1><p className="lead">This edition lets you explore the design and sample collection. Customer sign-in, saved addresses, checkout and orders require the hosted backend and are unavailable here.</p><p>No passwords, delivery details or payments are collected on this preview.</p><a className="button" href="/shop">Explore the collection</a></Shell>;
  if(path.startsWith('/products/')){const item=products.find(p=>p.slug===path.split('/')[2]);return item?<ProductPage product={item} items={products}/>:<Shell><h1>Piece not found.</h1><a href="/shop">Back to the collection</a></Shell>;}
  const category=path.startsWith('/categories/')?categories.find(c=>c.slug===path.split('/')[2]):undefined,collection=path.startsWith('/collections/')?collections.find(c=>c.slug===path.split('/')[2]):undefined;
