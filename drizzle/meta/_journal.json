@@ -8,6 +8,13 @@
       "when": 1794079314824,
       "tag": "0000_perfect_kulan_gath",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1794085918002,
+      "tag": "0001_lucky_harpoon",
+      "breakpoints": true
     }
   ]
 }
