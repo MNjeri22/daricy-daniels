@@ -5,3 +5,6 @@
 
 /* Preserve panel proportions while cropping only the bottom of concept portraits. */
 .look-image>img,.category-tile .look-image img{height:auto;min-height:100%;object-fit:initial;top:0}
+
+/* Sample bag summary shared across storefront routes. */
+.sample-bag-lines{margin:25px 0}.sample-bag-lines article{padding:18px 0;border-bottom:1px solid var(--border)}.sample-bag-lines h3{font-size:22px}.sample-bag-lines p{font-size:10px;color:var(--muted);margin:5px 0}.sample-bag-subtotal{font-size:13px;margin:20px 0}.sample-bag-subtotal>span{display:block;font-size:9px;color:var(--muted)}
