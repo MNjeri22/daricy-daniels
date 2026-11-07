@@ -1,5 +1,5 @@
 'use client';
-import {useEffect,useState,type FormEvent} from 'react';
+import {useEffect,useRef,useState,type FormEvent} from 'react';
 import {emptyAddress} from '@/lib/commerce/checkout';
 import {countries} from '@/lib/commerce/currency';
 import type {Customer,SavedAddress,CustomerOrder} from '@/lib/server/customer';
@@ -9,8 +9,9 @@ const fields=[['firstName','First name'],['lastName','Last name'],['line1','Stre
 const blank=()=>({...emptyAddress,id:'',label:''});
 async function api(action:string,body?:unknown){const response=await fetch(`/api/customer/${action}`,{credentials:'same-origin',cache:'no-store',...(body===undefined?{}:{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})});const data=await response.json() as {customer:Customer|null;addresses:SavedAddress[];orders:CustomerOrder[];message:string;error?:string};if(!response.ok)throw new Error(data.error||'Your account could not be reached. Please try again.');return data;}
 export function CustomerAccount({view}:{view:AccountView}){
+ const resetToken=useRef<string|null>(null);
  const [customer,setCustomer]=useState<Customer|null>(null),[loading,setLoading]=useState(true),[busy,setBusy]=useState(false),[error,setError]=useState(''),[message,setMessage]=useState(''),[addresses,setAddresses]=useState<SavedAddress[]>([]),[orders,setOrders]=useState<CustomerOrder[]>([]),[editing,setEditing]=useState<SavedAddress|null>(null),[token,setToken]=useState(''),[resetDone,setResetDone]=useState(false);
- useEffect(()=>{if(view==='reset-password'){setToken(new URLSearchParams(location.hash.slice(1)).get('token')||'');history.replaceState(null,'',location.pathname);}let active=true;api('session').then(data=>{if(active)setCustomer(data.customer);}).catch(err=>{if(active)setError(err.message);}).finally(()=>{if(active)setLoading(false);});return()=>{active=false;};},[view]);
+ useEffect(()=>{if(view==='reset-password'){if(resetToken.current===null)resetToken.current=new URLSearchParams(location.hash.slice(1)).get('token')||'';setToken(resetToken.current);history.replaceState(null,'',location.pathname);}let active=true;api('session').then(data=>{if(active)setCustomer(data.customer);}).catch(err=>{if(active)setError(err.message);}).finally(()=>{if(active)setLoading(false);});return()=>{active=false;};},[view]);
  async function loadAddresses(){const data=await api('addresses');setAddresses(data.addresses);}
  useEffect(()=>{if(!customer)return;let active=true;setError('');Promise.all([api('addresses'),api('orders')]).then(([a,o])=>{if(active){setAddresses(a.addresses);setOrders(o.orders);}}).catch(err=>{if(active)setError(err.message);});return()=>{active=false;};},[customer]);
  async function submitAuth(event:FormEvent<HTMLFormElement>,mode:AccountView){event.preventDefault();if(busy)return;setBusy(true);setError('');setMessage('');const data=new FormData(event.currentTarget),values=Object.fromEntries(data);if(mode==='reset-password'&&values.password!==values.confirmPassword){setError('Your passwords do not match.');setBusy(false);return;}try{const result=await api(mode==='register'?'register':mode==='forgot-password'?'forgot-password':mode==='reset-password'?'reset-password':'login',{...values,token});if(result.customer){location.assign('/account');return;}setMessage(result.message);if(mode==='reset-password')setResetDone(true);}catch(err){setError(err instanceof Error?err.message:'Please try again.');}finally{setBusy(false);}}
