@@ -51,3 +51,6 @@ yarn-error.log*
 
 # OS metadata
 .DS_Store
+
+# Safe configuration template only; never commit actual secrets.
+!.env.example
