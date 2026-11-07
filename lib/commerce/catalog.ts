@@ -11,7 +11,7 @@ export const collections = [
 ] as const;
 export const sizes=['XS','S','M','L','XL','One size'] as const;
 export const colors=[{slug:'burgundy',name:'Burgundy',hex:'#651d32'},{slug:'cream',name:'Cream',hex:'#efe7dc'},{slug:'tan',name:'Tan',hex:'#c3a17e'}] as const;
-export type Product = {id:string;slug:string;name:string;category:string;collection:string;price:number;currency:'USD';description:string;image:{src:string;columns:number;rows:number;column:number;row:number};variants:{size:string;color:string;available:boolean}[];newArrival:boolean;featured:boolean;rank:number;introduced:number};
+export type Product = {id:string;slug:string;name:string;category:string;collection:string;price:number;currency:'USD';description:string;image:{src:string;columns:number;rows:number;column:number;row:number};variants:{size:string;color:string;available:boolean;commerceVariantId?:string;priceMinor?:number;stockQuantity?:number}[];source?:'medusa';demo?:boolean;gallery?:string[];details?:{materials?:string;fit?:string;care?:string;shipping?:string};newArrival:boolean;featured:boolean;rank:number;introduced:number};
 const variant=(sizeList:string[],color:string,out:string[]=[])=>sizeList.map(size=>({size,color,available:!out.includes(size)}));
 const studio=(column:number,row=0)=>({src:'/assets/shop-concepts.webp',columns:3,rows:2,column,row});
 const original=(column:number)=>({src:'/assets/collection-concept.webp',columns:3,rows:1,column,row:0});

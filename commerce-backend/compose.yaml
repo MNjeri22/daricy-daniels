@@ -1,0 +1,23 @@
+# Local infrastructure only. The commerce app runs separately via npm run dev.
+services:
+  postgres:
+    image: postgres:18-bookworm
+    environment:
+      POSTGRES_DB: daricy
+      POSTGRES_USER: daricy
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set a local database password}
+    ports: ["127.0.0.1:5432:5432"]
+    volumes: ["postgres_data:/var/lib/postgresql"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U daricy -d daricy"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  redis:
+    image: redis:7.4-bookworm
+    command: ["redis-server", "--appendonly", "yes"]
+    ports: ["127.0.0.1:6379:6379"]
+    volumes: ["redis_data:/data"]
+volumes:
+  postgres_data:
+  redis_data:

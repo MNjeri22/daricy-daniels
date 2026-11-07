@@ -1,6 +1,8 @@
 declare namespace Cloudflare {
   interface Env {
     DB?: D1Database;
+    COMMERCE_MODE?: string;
+    COMMERCE_BRIDGE_SECRET?: string;
     CUSTOMER_APP_ORIGIN?: string;
     RESEND_API_KEY?: string;
     CUSTOMER_EMAIL_FROM?: string;

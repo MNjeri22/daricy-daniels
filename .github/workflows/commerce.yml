@@ -1,0 +1,28 @@
+name: Commerce backend checks
+on:
+  push:
+    paths: ['commerce-backend/**', 'lib/server/commerce.ts', 'lib/server/core.ts', 'lib/commerce/**', '.github/workflows/commerce.yml']
+  pull_request:
+    paths: ['commerce-backend/**', 'lib/server/commerce.ts', 'lib/server/core.ts', 'lib/commerce/**', '.github/workflows/commerce.yml']
+permissions:
+  contents: read
+concurrency:
+  group: commerce-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  commerce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: commerce-backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: commerce-backend/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - run: npm run typecheck
+      - run: npm run verify

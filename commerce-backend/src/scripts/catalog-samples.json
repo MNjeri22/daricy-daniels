@@ -1,0 +1,432 @@
+{
+  "products": [
+    {
+      "id": "sculpted-drape",
+      "slug": "sculpted-drape",
+      "name": "The Sculpted Drape",
+      "category": "dresses",
+      "collection": "abundance",
+      "price": 42000,
+      "currency": "USD",
+      "description": "Asymmetric folds and a fluid line, exploring the expressive depth of burgundy.",
+      "image": {
+        "src": "/assets/collection-concept.webp",
+        "columns": 3,
+        "rows": 1,
+        "column": 0,
+        "row": 0
+      },
+      "variants": [
+        {
+          "size": "XS",
+          "color": "burgundy",
+          "available": false
+        },
+        {
+          "size": "S",
+          "color": "burgundy",
+          "available": true
+        },
+        {
+          "size": "M",
+          "color": "burgundy",
+          "available": true
+        },
+        {
+          "size": "L",
+          "color": "burgundy",
+          "available": true
+        }
+      ],
+      "newArrival": true,
+      "featured": true,
+      "rank": 1,
+      "introduced": 9
+    },
+    {
+      "id": "tailored-form",
+      "slug": "tailored-form",
+      "name": "The Tailored Form",
+      "category": "tops",
+      "collection": "the-considered-edit",
+      "price": 29000,
+      "currency": "USD",
+      "description": "A softly structured cream jacket, shown with tan trousers. Sample price refers to the jacket.",
+      "image": {
+        "src": "/assets/collection-concept.webp",
+        "columns": 3,
+        "rows": 1,
+        "column": 1,
+        "row": 0
+      },
+      "variants": [
+        {
+          "size": "XS",
+          "color": "cream",
+          "available": true
+        },
+        {
+          "size": "S",
+          "color": "cream",
+          "available": true
+        },
+        {
+          "size": "M",
+          "color": "cream",
+          "available": true
+        },
+        {
+          "size": "L",
+          "color": "cream",
+          "available": true
+        },
+        {
+          "size": "XL",
+          "color": "cream",
+          "available": false
+        }
+      ],
+      "newArrival": false,
+      "featured": true,
+      "rank": 2,
+      "introduced": 4
+    },
+    {
+      "id": "modern-trench",
+      "slug": "modern-trench",
+      "name": "The Modern Trench",
+      "category": "outerwear",
+      "collection": "the-considered-edit",
+      "price": 65000,
+      "currency": "USD",
+      "description": "A generous tan layer with a deliberate silhouette. A study in quiet confidence.",
+      "image": {
+        "src": "/assets/collection-concept.webp",
+        "columns": 3,
+        "rows": 1,
+        "column": 2,
+        "row": 0
+      },
+      "variants": [
+        {
+          "size": "S",
+          "color": "tan",
+          "available": false
+        },
+        {
+          "size": "M",
+          "color": "tan",
+          "available": true
+        },
+        {
+          "size": "L",
+          "color": "tan",
+          "available": true
+        },
+        {
+          "size": "XL",
+          "color": "tan",
+          "available": true
+        }
+      ],
+      "newArrival": false,
+      "featured": true,
+      "rank": 3,
+      "introduced": 3
+    },
+    {
+      "id": "ivory-column",
+      "slug": "ivory-column",
+      "name": "The Ivory Column",
+      "category": "dresses",
+      "collection": "abundance",
+      "price": 39500,
+      "currency": "USD",
+      "description": "A long cream silhouette with a clean neckline and a sense of ease.",
+      "image": {
+        "src": "/assets/shop-concepts.webp",
+        "columns": 3,
+        "rows": 2,
+        "column": 0,
+        "row": 0
+      },
+      "variants": [
+        {
+          "size": "XS",
+          "color": "cream",
+          "available": true
+        },
+        {
+          "size": "S",
+          "color": "cream",
+          "available": true
+        },
+        {
+          "size": "M",
+          "color": "cream",
+          "available": true
+        },
+        {
+          "size": "L",
+          "color": "cream",
+          "available": true
+        }
+      ],
+      "newArrival": true,
+      "featured": false,
+      "rank": 4,
+      "introduced": 8
+    },
+    {
+      "id": "satin-expression",
+      "slug": "satin-expression",
+      "name": "The Satin Expression",
+      "category": "tops",
+      "collection": "abundance",
+      "price": 18500,
+      "currency": "USD",
+      "description": "Burgundy sheen and soft movement. The sample price is for the blouse, shown styled with cream trousers.",
+      "image": {
+        "src": "/assets/shop-concepts.webp",
+        "columns": 3,
+        "rows": 2,
+        "column": 1,
+        "row": 0
+      },
+      "variants": [
+        {
+          "size": "XS",
+          "color": "burgundy",
+          "available": false
+        },
+        {
+          "size": "S",
+          "color": "burgundy",
+          "available": false
+        },
+        {
+          "size": "M",
+          "color": "burgundy",
+          "available": false
+        },
+        {
+          "size": "L",
+          "color": "burgundy",
+          "available": false
+        },
+        {
+          "size": "XL",
+          "color": "burgundy",
+          "available": false
+        }
+      ],
+      "newArrival": true,
+      "featured": false,
+      "rank": 5,
+      "introduced": 7
+    },
+    {
+      "id": "wide-leg",
+      "slug": "wide-leg",
+      "name": "The Wide-Leg Trouser",
+      "category": "bottoms",
+      "collection": "the-considered-edit",
+      "price": 24000,
+      "currency": "USD",
+      "description": "A warm tan foundation with a long, relaxed line. Sample price refers to the trousers.",
+      "image": {
+        "src": "/assets/shop-concepts.webp",
+        "columns": 3,
+        "rows": 2,
+        "column": 2,
+        "row": 0
+      },
+      "variants": [
+        {
+          "size": "XS",
+          "color": "tan",
+          "available": false
+        },
+        {
+          "size": "S",
+          "color": "tan",
+          "available": true
+        },
+        {
+          "size": "M",
+          "color": "tan",
+          "available": true
+        },
+        {
+          "size": "L",
+          "color": "tan",
+          "available": true
+        },
+        {
+          "size": "XL",
+          "color": "tan",
+          "available": false
+        }
+      ],
+      "newArrival": false,
+      "featured": true,
+      "rank": 6,
+      "introduced": 2
+    },
+    {
+      "id": "soft-sculpture",
+      "slug": "soft-sculpture",
+      "name": "The Soft Sculpture Top",
+      "category": "tops",
+      "collection": "abundance",
+      "price": 21000,
+      "currency": "USD",
+      "description": "Cream folds form a sculptural neckline. A concept top, styled with a tan skirt.",
+      "image": {
+        "src": "/assets/shop-concepts.webp",
+        "columns": 3,
+        "rows": 2,
+        "column": 0,
+        "row": 1
+      },
+      "variants": [
+        {
+          "size": "XS",
+          "color": "cream",
+          "available": true
+        },
+        {
+          "size": "S",
+          "color": "cream",
+          "available": true
+        },
+        {
+          "size": "M",
+          "color": "cream",
+          "available": true
+        },
+        {
+          "size": "L",
+          "color": "cream",
+          "available": false
+        }
+      ],
+      "newArrival": true,
+      "featured": false,
+      "rank": 7,
+      "introduced": 6
+    },
+    {
+      "id": "arc-bag",
+      "slug": "arc-bag",
+      "name": "The Arc Bag",
+      "category": "accessories",
+      "collection": "abundance",
+      "price": 27500,
+      "currency": "USD",
+      "description": "A curved burgundy silhouette and a considered finishing gesture. An illustrative accessory concept.",
+      "image": {
+        "src": "/assets/shop-concepts.webp",
+        "columns": 3,
+        "rows": 2,
+        "column": 1,
+        "row": 1
+      },
+      "variants": [
+        {
+          "size": "One size",
+          "color": "burgundy",
+          "available": true
+        }
+      ],
+      "newArrival": false,
+      "featured": true,
+      "rank": 8,
+      "introduced": 1
+    },
+    {
+      "id": "longline-coat",
+      "slug": "longline-coat",
+      "name": "The Longline Coat",
+      "category": "outerwear",
+      "collection": "the-considered-edit",
+      "price": 59500,
+      "currency": "USD",
+      "description": "A cream outer layer with a confident, elongated form. Styled with a tan ensemble.",
+      "image": {
+        "src": "/assets/shop-concepts.webp",
+        "columns": 3,
+        "rows": 2,
+        "column": 2,
+        "row": 1
+      },
+      "variants": [
+        {
+          "size": "S",
+          "color": "cream",
+          "available": true
+        },
+        {
+          "size": "M",
+          "color": "cream",
+          "available": true
+        },
+        {
+          "size": "L",
+          "color": "cream",
+          "available": true
+        },
+        {
+          "size": "XL",
+          "color": "cream",
+          "available": false
+        }
+      ],
+      "newArrival": true,
+      "featured": false,
+      "rank": 9,
+      "introduced": 5
+    }
+  ],
+  "categories": [
+    {
+      "slug": "dresses",
+      "name": "Dresses",
+      "description": "Fluid lines and a singular presence."
+    },
+    {
+      "slug": "tops",
+      "name": "Tops",
+      "description": "Soft structure. Expressive detail."
+    },
+    {
+      "slug": "bottoms",
+      "name": "Bottoms",
+      "description": "A considered foundation."
+    },
+    {
+      "slug": "outerwear",
+      "name": "Outerwear",
+      "description": "Layers with quiet confidence."
+    },
+    {
+      "slug": "accessories",
+      "name": "Accessories",
+      "description": "The finishing expression."
+    }
+  ],
+  "collections": [
+    {
+      "slug": "abundance",
+      "name": "Abundance",
+      "description": "Rich burgundy. Sculptural form. An expressive chapter.",
+      "image": "/assets/campaign-concept.webp"
+    },
+    {
+      "slug": "the-considered-edit",
+      "name": "The Considered Edit",
+      "description": "Cream, tan, and the art of the everyday.",
+      "image": "/assets/shop-concepts.webp"
+    }
+  ]
+}

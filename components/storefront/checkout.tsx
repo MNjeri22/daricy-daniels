@@ -1,7 +1,9 @@
 'use client';
+import {LiveCheckout} from './live-checkout';
+import {useStoreCatalog} from './catalog-context';
 import {countries} from '@/lib/commerce/currency';
 import {useEffect,useRef,useState} from 'react';
-import {products,colors} from '@/lib/commerce/catalog';
+import {colors} from '@/lib/commerce/catalog';
 import {emptyAddress,sampleShipping,sampleQuote,displayQuote,validateGuest,checkoutProvider,lineKey,applySavedAddress,type Address,type GuestDetails,type ShippingMethod} from '@/lib/commerce/checkout';
 import {CheckoutCustomer} from './checkout-customer';
 import {Brand,Icon} from './home-page';
@@ -10,7 +12,9 @@ import {useSampleBag} from './use-sample-bag';
 import {useCurrency,CurrencySwitch,CurrencyNotice} from './currency';
 import './checkout.css';
 const fieldLabels:Record<string,string>={firstName:'first name',lastName:'last name',line1:'address',line2:'apartment / suite',city:'city',region:'county / state / region',postalCode:'postal code',country:'country'};
-export function Checkout(){
+export function Checkout(){const {mode}=useStoreCatalog();return mode==='live'?<LiveCheckout/>:<PreviewCheckout/>;}
+function PreviewCheckout(){
+ const {items:products}=useStoreCatalog();
  const {currency,money,format}=useCurrency();
  const bag=useSampleBag(),[step,setStep]=useState(0),[details,setDetails]=useState<GuestDetails>({email:'',shipping:{...emptyAddress},billingSame:true,billing:{...emptyAddress},method:'standard'}),[promo,setPromo]=useState(''),[promoInput,setPromoInput]=useState(''),[promoError,setPromoError]=useState(''),[errors,setErrors]=useState<Record<string,string>>({}),[notice,setNotice]=useState(''),[paymentMessage,setPaymentMessage]=useState(''),[checking,setChecking]=useState(false);
  const heading=useRef<HTMLHeadingElement>(null),errorSummary=useRef<HTMLDivElement>(null),previousBag=useRef<string|null>(null);

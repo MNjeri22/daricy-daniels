@@ -2,7 +2,7 @@
 
 Luxury contemporary fashion ecommerce, built in seven reviewable phases.
 
-**Current milestone: Phase 7 — Backend foundation implemented; live activation pending.** The shop, collection/category routes, filters, search, sorting, quick view and saved pieces are implemented with sample catalog data. Product details and sample bag selection are complete. Editable bag, guest details, delivery and review are implemented as a private checkout preview. Separate customer email/password accounts, password reset, saved addresses, owned order-history reads, durable studio edits, server validation and integration boundaries are implemented. Medusa commerce, payment, CMS, email and verified order flows require external service setup and staging validation.
+**Current milestone: commerce backend and live storefront integration implemented; hosting and payment activation pending.** The full application includes separate customer accounts/reset/saved addresses, real product/variant/stock integration, an ownership-enforcing checkout with regional KES/USD/GBP prices, native promotions/delivery/tax totals, a review stage, and merchant Medusa Admin. GitHub Pages remains a static sample-data preview. Payments and order completion are explicitly disabled. See the [commerce deployment handoff](docs/11-commerce-backend.md) for services, verified reset sender, real merchant data and staging checks still required.
 
 1. Architecture — complete; see [architecture](docs/01-architecture.md).
 2. Design system — complete; see [design system](docs/03-design-system.md).
@@ -10,7 +10,7 @@ Luxury contemporary fashion ecommerce, built in seven reviewable phases.
 4. Shop — complete; see [shop handoff](docs/05-shop.md).
 5. Product page — complete; see [product page handoff](docs/06-product-page.md).
 6. Cart / checkout — complete; see [checkout handoff](docs/07-cart-checkout.md).
-7. Backend — foundation implemented; [activation and remaining acceptance gates](docs/08-backend.md).
+7. Backend — commerce service and live-mode storefront implemented; [deployment and payment handoff](docs/11-commerce-backend.md).
 
 See the [delivery plan and acceptance gates](docs/02-phase-plan.md) and [original brand brief](docs/brand-brief.md).
 

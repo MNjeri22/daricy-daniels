@@ -56,3 +56,11 @@ yarn-error.log*
 !.env.example
 
 /pages-dist/
+
+# Commerce service generated state
+/commerce-backend/.medusa/
+/commerce-backend/.cache/
+/commerce-backend/uploads/
+/commerce-backend/*.log
+/commerce-backend/.qa-state.json
+/commerce-backend/node_modules

@@ -6,8 +6,9 @@ export function updateBagLine(lines:BagLine[],key:string,patch:Partial<Pick<BagL
  const current=lines.find(l=>lineKey(l)===key);if(!current)throw new Error('This piece changed in another window. Refresh your bag and try again.');
  const next={...current,...patch},product=items.find(p=>p.id===next.productId);
  if(!product||!validQuantity(next.quantity)||!selectedVariant(product,next.color,next.size)?.available)throw new Error('Choose an available size and color, with a quantity from 1 to 5.');
+ const limit=Math.min(5,selectedVariant(product,next.color,next.size)?.stockQuantity??5);if(next.quantity>limit)throw new Error(`Only ${limit} of this size and color are currently available.`);
  const others=lines.filter(l=>lineKey(l)!==key),duplicate=others.find(l=>lineKey(l)===lineKey(next));
- if(duplicate&&duplicate.quantity+next.quantity>5)throw new Error('Your bag allows up to 5 of each size and color. Reduce the quantity first.');
+ if(duplicate&&duplicate.quantity+next.quantity>limit)throw new Error('Your bag allows up to 5 of each size and color. Reduce the quantity first.');
  return duplicate?others.map(l=>l===duplicate?{...l,quantity:l.quantity+next.quantity}:l):lines.map(l=>lineKey(l)===key?next:l);
 }
 export const sampleShipping=[{id:'standard',name:'Standard sample delivery',amount:1200},{id:'express',name:'Express sample delivery',amount:2500}] as const;
