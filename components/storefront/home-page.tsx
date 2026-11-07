@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { looks, stories, type ConceptLook } from '@/lib/storefront-content';
 import {StoreHeader} from './store-header';
+import {CurrencyNotice,CurrencySwitch} from './currency';
 
 type IconName = 'search' | 'heart' | 'bag' | 'user' | 'menu' | 'close' | 'arrow';
 export function Icon({ name }: { name: IconName }) {
@@ -9,12 +10,12 @@ export function Icon({ name }: { name: IconName }) {
 }
 export function Brand({ light=false }: { light?: boolean }) { return <a className={`brand ${light?'brand-light':''}`} href="/" aria-label="Daricy Daniels homepage"><span className="brand-symbol" aria-hidden="true"/><span>DARICY DANIELS</span></a>; }
 const links=[['New','/new-arrivals'],['Shop','/shop'],['Collections','/collections'],['About','/about'],['Journal','/journal']];
-export function SimpleHeader() { return <><div className="announcement">THE HEART OF LUXURY · DISCOVER DARICY DANIELS</div><header className="site-header"><Brand light/><nav className="desktop-nav" aria-label="Main">{links.map(([label,href])=><a href={href} key={label}>{label}</a>)}</nav><a className="back-home" href="/">Explore the collection <Icon name="arrow"/></a></header></>; }
+export function SimpleHeader() { return <><div className="announcement">THE HEART OF LUXURY · DISCOVER DARICY DANIELS</div><header className="site-header"><Brand light/><nav className="desktop-nav" aria-label="Main">{links.map(([label,href])=><a href={href} key={label}>{label}</a>)}</nav><CurrencySwitch/><a className="back-home" href="/">Explore the collection <Icon name="arrow"/></a></header></>; }
 export function Footer() { return <footer className="site-footer"><div className="footer-top"><div className="footer-intro"><Brand light/><p>Luxury. Presence. Possibility.<br/>The heart of luxury.</p></div>{[
   {title:'Explore',items:[['New arrivals','/new-arrivals'],['Abundance collection','/collections/abundance'],['Ready-to-wear','/ready-to-wear'],['Signature favorites','/best-sellers'],['The journal','/journal']]},
   {title:'The house',items:[['Our world','/about'],['Contact','/contact'],['The inner circle','/#newsletter'],['Design atelier','/design-system/index.html']]},
   {title:'Client services',items:[['Shipping & delivery','/shipping'],['Returns & exchanges','/returns'],['Size guide','/size-guide'],['FAQs','/faq']]},
-].map(col=><div className="footer-column" key={col.title}><h2>{col.title}</h2>{col.items.map(([label,href])=><a key={label} href={href}>{label}</a>)}</div>)}</div><div className="footer-bottom"><p>© {new Date().getFullYear()} DARICY DANIELS</p><p>PRIVATE PREVIEW · AI CONCEPT IMAGERY · PURCHASING UNAVAILABLE</p><div><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></footer>; }
+].map(col=><div className="footer-column" key={col.title}><h2>{col.title}</h2>{col.items.map(([label,href])=><a key={label} href={href}>{label}</a>)}</div>)}</div><CurrencyNotice/><div className="footer-bottom"><p>© {new Date().getFullYear()} DARICY DANIELS</p><p>PRIVATE PREVIEW · AI CONCEPT IMAGERY · PURCHASING UNAVAILABLE</p><div><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></footer>; }
 function LookImage({look}:{look:ConceptLook}) { return <div className="look-image"><img src="/assets/collection-concept.webp" alt={`${look.color} ${look.category.toLowerCase()} concept on a model; AI-generated editorial study`} width="1536" height="1024" loading="lazy" style={{left:`${-100*look.panel}%`}}/></div>; }
 
 export function HomePage() {
