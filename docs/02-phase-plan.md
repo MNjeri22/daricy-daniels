@@ -8,8 +8,8 @@ The requested order is architecture → design system → homepage → shop → 
 | 3 — Homepage | Campaign hero, collection feature, signature products, brand statement, editorial, categories, journal and newsletter | Distinct editorial rhythm; mobile crops; responsive images; honest signup behavior | Complete |
 | 4 — Shop | Dynamic categories/collections, search, filters, sorting, pagination, wishlist and quick view | URL-preserved state, empty/loading/error results, accessible mobile filters | Complete |
 | 5 — Product page | Gallery, zoom, variant stock, size guide, quantity, add-to-cart, details and recommendations | Correct variant selection; unavailable combinations blocked; keyboard and mobile gallery checks | Complete |
-| 6 — Cart / checkout | Drawer/full cart, quantity/remove/save, shipping/promo display, guest details, billing/shipping, order review and provider boundary | Persisted cart, recoverable errors, no fake payment success; sandbox flow when configured | Next |
-| 7 — Backend | Medusa/PostgreSQL adapter, Stripe integration, customer auth, admin, CMS, email and analytics | Inventory concurrency, signed/idempotent webhooks, ownership tests, full staging purchase/refund/failure journey | Pending |
+| 6 — Cart / checkout | Drawer/full cart, quantity/remove/save, shipping/promo display, guest details, billing/shipping, order review and provider boundary | Persisted cart, recoverable errors, no fake payment success; sandbox flow when configured | Complete |
+| 7 — Backend | Medusa/PostgreSQL adapter, Stripe integration, customer auth, admin, CMS, email and analytics | Inventory concurrency, signed/idempotent webhooks, ownership tests, full staging purchase/refund/failure journey | Next |
 
 ## Related pages
 - Phase 3: About, journal layouts and customer-care page shell.
@@ -34,3 +34,5 @@ Do not block architecture and design work on launch inputs. Do not invent them o
 
 
 - Phase 5: [Product page handoff](06-product-page.md).
+
+- Phase 6: [Cart / checkout handoff](07-cart-checkout.md).
