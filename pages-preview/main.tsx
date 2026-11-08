@@ -1,5 +1,6 @@
 /// <reference types="vite/client" />
 import {createRoot} from 'react-dom/client';
+import {NewsletterPage} from '@/components/storefront/newsletter';
 import {AccountPreview} from './account';
 import {HomePage,Footer,SimpleHeader} from '@/components/storefront/home-page';
 import {StoreHeader} from '@/components/storefront/store-header';
@@ -19,6 +20,7 @@ const base=import.meta.env.BASE_URL.replace(/\/$/,''),path=decodeURI(location.pa
 function Shell({children}:{children:React.ReactNode}){return <><StoreHeader/><main id="main" className="editorial-page">{children}</main><Footer/></>;}
 function App(){
  if(path==='/')return <HomePage/>;
+ if(path==='/newsletter')return <><StoreHeader/><NewsletterPage/><Footer/></>;
  if(path==='/about')return <About/>;if(path==='/collections')return <Collections/>;if(path==='/journal')return <Journal/>;if(path==='/size-guide')return <SizeGuide/>;if(path==='/cart')return <Cart/>;
  if(path==='/account'||path==='/account/login')return <AccountPreview/>;
  if(path==='/account/register')return <AccountPreview view="register"/>;
