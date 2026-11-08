@@ -4,7 +4,7 @@ const root=path.resolve('pages-dist'),html=await readFile(path.join(root,'index.
 // Derive every current catalog/editorial route from the approved fixtures at build time.
 const {products,categories,collections}=await import('../lib/commerce/catalog.ts');
 const {stories,carePages}=await import('../lib/storefront-content.ts');
-const routes=['newsletter','shop','wishlist','new-arrivals','best-sellers','ready-to-wear','about','collections','journal','size-guide','cart','checkout','account','account/login','account/register','account/forgot-password','account/reset-password','account/orders','account/addresses','studio',...products.map(p=>'products/'+p.slug),...categories.map(c=>'categories/'+c.slug),...collections.map(c=>'collections/'+c.slug),...stories.map(s=>'journal/'+s.slug),...Object.keys(carePages)];
+const routes=['bags','newsletter','shop','wishlist','new-arrivals','best-sellers','ready-to-wear','about','collections','journal','size-guide','cart','checkout','account','account/login','account/register','account/forgot-password','account/reset-password','account/orders','account/addresses','studio',...products.map(p=>'products/'+p.slug),...categories.map(c=>'categories/'+c.slug),...collections.map(c=>'collections/'+c.slug),...stories.map(s=>'journal/'+s.slug),...Object.keys(carePages)];
 for(const route of routes){const directory=path.join(root,route);await mkdir(directory,{recursive:true});await writeFile(path.join(directory,'index.html'),html);}
 await writeFile(path.join(root,'404.html'),html);await writeFile(path.join(root,'.nojekyll'),'');
 // Public design-lab files are copied by Vite, so prefix their root-relative assets too.
