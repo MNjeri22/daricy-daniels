@@ -6,10 +6,11 @@ export function validQuantity(quantity:number){return Number.isInteger(quantity)
 export function readBag(value:unknown,items:Product[]):BagLine[]{
  if(!Array.isArray(value))return [];
  const result:BagLine[]=[];
- for(const raw of value.slice(0,100)){if(!raw||typeof raw!=='object')continue;const line=raw as BagLine,p=items.find(p=>p.id===line.productId);if(!p||!validQuantity(line.quantity)||!selectedVariant(p,line.color,line.size)?.available)continue;const existing=result.find(l=>l.productId===line.productId&&l.color===line.color&&l.size===line.size);if(existing)existing.quantity=Math.min(5,existing.quantity+line.quantity);else result.push({productId:p.id,color:line.color,size:line.size,quantity:line.quantity});}
+ for(const raw of value.slice(0,100)){if(!raw||typeof raw!=='object')continue;const line=raw as BagLine,p=items.find(p=>p.id===line.productId);if(!p||p.pricePending||!validQuantity(line.quantity)||!selectedVariant(p,line.color,line.size)?.available)continue;const existing=result.find(l=>l.productId===line.productId&&l.color===line.color&&l.size===line.size);if(existing)existing.quantity=Math.min(5,existing.quantity+line.quantity);else result.push({productId:p.id,color:line.color,size:line.size,quantity:line.quantity});}
  return result;
 }
 export function addSampleLine(lines:BagLine[],product:Product,color:string,size:string,quantity:number):BagLine[]{
+ if(product.pricePending)throw new Error('Pricing for this design has not been confirmed yet. Save it to your edit instead.');
  if(!validQuantity(quantity)||!selectedVariant(product,color,size)?.available)throw new Error('Choose an available color and size, and a quantity from 1 to 5.');
  const existing=lines.find(l=>l.productId===product.id&&l.color===color&&l.size===size);
  const limit=Math.min(5,selectedVariant(product,color,size)?.stockQuantity??5);
