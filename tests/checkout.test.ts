@@ -14,7 +14,7 @@ test('guest validation catches missing data, malformed email, ZIP and unsupporte
 test('separate billing must be complete; matching billing needs no duplicate address',()=>{assert.deepEqual(validateGuest(valid),{});assert.ok(validateGuest({...valid,billingSame:false})['billing.line1']);assert.deepEqual(validateGuest({...valid,billingSame:false,billing:{...valid.shipping}}),{});});
 test('unconfigured payment provider cannot claim an order or payment success',async()=>{const result=await checkoutProvider.prepare();assert.equal(result.ok,false);assert.equal(result.code,'PROVIDER_NOT_CONFIGURED');assert.match(result.message,/No order was placed/);assert.equal('orderId' in result,false);assert.equal('redirectUrl' in result,false);});
 
-test('fractional dollar discounts and totals remain visible to the cent',()=>{const q=sampleQuote([{productId:'arc-bag',color:'burgundy',size:'One size',quantity:1}],products,'standard','PREVIEW10');assert.equal(q.discount,2750);assert.equal(money(q.discount),'$27.50');assert.equal(money(q.estimatedTotal),'$259.50');});
+test('fractional dollar discounts and totals remain visible to the cent',()=>{const q=sampleQuote([{productId:'arc-bag',color:'burgundy',size:'One size',quantity:1}],products.map(p=>p.id==='arc-bag'?{...p,price:27500}:p),'standard','PREVIEW10');assert.equal(q.discount,2750);assert.equal(money(q.discount),'$27.50');assert.equal(money(q.estimatedTotal),'$259.50');});
 
 test('saved address selection copies only shipping/contact fields and preserves independent billing and delivery',()=>{
  const billing={...emptyAddress,firstName:'Billing',country:'GB',postalCode:'SW1A 1AA'};
