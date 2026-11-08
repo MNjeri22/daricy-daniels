@@ -4,12 +4,12 @@ export const bagProducts:Product[]=[
   {
     "id": "sculptural-tote",
     "slug": "sculptural-tote",
-    "name": "DD Sculptural Tote",
+    "name": "Sculptural Tote",
     "category": "bags",
     "collection": "the-bags-edit",
     "price": 20000,
     "currency": "USD",
-    "description": "An architectural tote silhouette with circular panel details and long handles. Working name and supplied design imagery; final product details are pending.",
+    "description": "An architectural tote silhouette with circular panel details and long handles. ",
     "image": {
       "src": "/assets/bag-tote-burgundy-1.png",
       "width": 1330,
@@ -22,7 +22,7 @@ export const bagProducts:Product[]=[
     "photos": [
       {
         "color": "burgundy",
-        "label": "Burgundy / design view 1",
+        "label": "Burgundy / view 1",
         "image": {
           "src": "/assets/bag-tote-burgundy-1.png",
           "width": 1330,
@@ -35,7 +35,7 @@ export const bagProducts:Product[]=[
       },
       {
         "color": "burgundy",
-        "label": "Burgundy / design view 2",
+        "label": "Burgundy / view 2",
         "image": {
           "src": "/assets/bag-tote-burgundy-2.png",
           "width": 1337,
@@ -48,7 +48,7 @@ export const bagProducts:Product[]=[
       },
       {
         "color": "denim",
-        "label": "Denim blue / design view 1",
+        "label": "Denim blue / view 1",
         "image": {
           "src": "/assets/bag-tote-denim-1.png",
           "width": 1307,
@@ -61,7 +61,7 @@ export const bagProducts:Product[]=[
       },
       {
         "color": "denim",
-        "label": "Denim blue / design view 2",
+        "label": "Denim blue / view 2",
         "image": {
           "src": "/assets/bag-tote-denim-2.png",
           "width": 1329,
@@ -74,7 +74,7 @@ export const bagProducts:Product[]=[
       },
       {
         "color": "denim",
-        "label": "Denim blue / design view 3",
+        "label": "Denim blue / view 3",
         "image": {
           "src": "/assets/bag-tote-denim-3.png",
           "width": 1312,
@@ -103,8 +103,8 @@ export const bagProducts:Product[]=[
     "rank": 10,
     "introduced": 10,
     "details": {
-      "materials": "Composition, construction and origin will be confirmed with the final product specifications. Images are supplied design studies.",
-      "fit": "One-size design preview. Dimensions, capacity and strap measurements are pending.",
+      "materials": "Composition, construction and origin will be confirmed with the final product specifications.",
+      "fit": "Dimensions, capacity and strap measurements will be confirmed before ordering opens.",
       "care": "Care instructions will be supplied with the approved materials and finished product.",
       "shipping": "Delivery and returns details will be confirmed before purchasing opens."
     },
@@ -113,12 +113,12 @@ export const bagProducts:Product[]=[
   {
     "id": "crescent-bag",
     "slug": "crescent-bag",
-    "name": "DD Crescent",
+    "name": "Crescent",
     "category": "bags",
     "collection": "the-bags-edit",
     "price": 12500,
     "currency": "USD",
-    "description": "A sweeping crescent silhouette, a short wrist strap and warm metallic accents. Working name and supplied design imagery; final product details are pending.",
+    "description": "A sweeping crescent silhouette, a short wrist strap and warm metallic accents. ",
     "image": {
       "src": "/assets/bag-crescent-burgundy.png",
       "width": 1402,
@@ -131,7 +131,7 @@ export const bagProducts:Product[]=[
     "photos": [
       {
         "color": "burgundy",
-        "label": "Burgundy / design view 1",
+        "label": "Burgundy / view 1",
         "image": {
           "src": "/assets/bag-crescent-burgundy.png",
           "width": 1402,
@@ -144,7 +144,7 @@ export const bagProducts:Product[]=[
       },
       {
         "color": "denim",
-        "label": "Denim blue / design view 1",
+        "label": "Denim blue / view 1",
         "image": {
           "src": "/assets/bag-crescent-denim.png",
           "width": 1402,
@@ -173,8 +173,8 @@ export const bagProducts:Product[]=[
     "rank": 11,
     "introduced": 11,
     "details": {
-      "materials": "Composition, construction and origin will be confirmed with the final product specifications. Images are supplied design studies.",
-      "fit": "One-size design preview. Dimensions, capacity and strap measurements are pending.",
+      "materials": "Composition, construction and origin will be confirmed with the final product specifications.",
+      "fit": "Dimensions, capacity and strap measurements will be confirmed before ordering opens.",
       "care": "Care instructions will be supplied with the approved materials and finished product.",
       "shipping": "Delivery and returns details will be confirmed before purchasing opens."
     },
@@ -183,12 +183,12 @@ export const bagProducts:Product[]=[
   {
     "id": "petal-bag",
     "slug": "petal-bag",
-    "name": "DD Petal",
+    "name": "Petal",
     "category": "bags",
     "collection": "the-bags-edit",
     "price": 17500,
     "currency": "USD",
-    "description": "Layered petal-shaped panels and a rounded top-handle silhouette. Working name and supplied design imagery; final product details are pending.",
+    "description": "Layered petal-shaped panels and a rounded top-handle silhouette. ",
     "image": {
       "src": "/assets/bag-petal-burgundy.png",
       "width": 1402,
@@ -201,7 +201,7 @@ export const bagProducts:Product[]=[
     "photos": [
       {
         "color": "burgundy",
-        "label": "Burgundy / design view 1",
+        "label": "Burgundy / view 1",
         "image": {
           "src": "/assets/bag-petal-burgundy.png",
           "width": 1402,
@@ -214,7 +214,7 @@ export const bagProducts:Product[]=[
       },
       {
         "color": "denim",
-        "label": "Denim blue / design view 1",
+        "label": "Denim blue / view 1",
         "image": {
           "src": "/assets/bag-petal-denim.png",
           "width": 1402,
@@ -243,8 +243,8 @@ export const bagProducts:Product[]=[
     "rank": 12,
     "introduced": 12,
     "details": {
-      "materials": "Composition, construction and origin will be confirmed with the final product specifications. Images are supplied design studies.",
-      "fit": "One-size design preview. Dimensions, capacity and strap measurements are pending.",
+      "materials": "Composition, construction and origin will be confirmed with the final product specifications.",
+      "fit": "Dimensions, capacity and strap measurements will be confirmed before ordering opens.",
       "care": "Care instructions will be supplied with the approved materials and finished product.",
       "shipping": "Delivery and returns details will be confirmed before purchasing opens."
     },
@@ -253,12 +253,12 @@ export const bagProducts:Product[]=[
   {
     "id": "vanity-case",
     "slug": "vanity-case",
-    "name": "DD Vanity Case",
+    "name": "Vanity Case",
     "category": "bags",
     "collection": "the-bags-edit",
     "price": 19000,
     "currency": "USD",
-    "description": "A compact trunk-inspired form with a top handle and metallic details. Working name and supplied design imagery; final product details are pending.",
+    "description": "A compact trunk-inspired form with a top handle and metallic details. ",
     "image": {
       "src": "/assets/bag-vanity-burgundy.png",
       "width": 1402,
@@ -271,7 +271,7 @@ export const bagProducts:Product[]=[
     "photos": [
       {
         "color": "burgundy",
-        "label": "Burgundy / design view 1",
+        "label": "Burgundy / view 1",
         "image": {
           "src": "/assets/bag-vanity-burgundy.png",
           "width": 1402,
@@ -284,7 +284,7 @@ export const bagProducts:Product[]=[
       },
       {
         "color": "denim",
-        "label": "Denim blue / design view 1",
+        "label": "Denim blue / view 1",
         "image": {
           "src": "/assets/bag-vanity-denim.png",
           "width": 1402,
@@ -313,8 +313,8 @@ export const bagProducts:Product[]=[
     "rank": 13,
     "introduced": 13,
     "details": {
-      "materials": "Composition, construction and origin will be confirmed with the final product specifications. Images are supplied design studies.",
-      "fit": "One-size design preview. Dimensions, capacity and strap measurements are pending.",
+      "materials": "Composition, construction and origin will be confirmed with the final product specifications.",
+      "fit": "Dimensions, capacity and strap measurements will be confirmed before ordering opens.",
       "care": "Care instructions will be supplied with the approved materials and finished product.",
       "shipping": "Delivery and returns details will be confirmed before purchasing opens."
     },
@@ -323,12 +323,12 @@ export const bagProducts:Product[]=[
   {
     "id": "fold-bag",
     "slug": "fold-bag",
-    "name": "DD Fold",
+    "name": "Fold",
     "category": "bags",
     "collection": "the-bags-edit",
     "price": 14000,
     "currency": "USD",
-    "description": "Overlapping diagonal panels form a sculptural fold across this compact silhouette. Working name and supplied design imagery; final product details are pending.",
+    "description": "Overlapping diagonal panels form a sculptural fold across this compact silhouette. ",
     "image": {
       "src": "/assets/bag-fold-burgundy.png",
       "width": 1402,
@@ -341,7 +341,7 @@ export const bagProducts:Product[]=[
     "photos": [
       {
         "color": "burgundy",
-        "label": "Burgundy / design view 1",
+        "label": "Burgundy / view 1",
         "image": {
           "src": "/assets/bag-fold-burgundy.png",
           "width": 1402,
@@ -354,7 +354,7 @@ export const bagProducts:Product[]=[
       },
       {
         "color": "denim",
-        "label": "Denim blue / design view 1",
+        "label": "Denim blue / view 1",
         "image": {
           "src": "/assets/bag-fold-denim.png",
           "width": 1402,
@@ -383,8 +383,8 @@ export const bagProducts:Product[]=[
     "rank": 14,
     "introduced": 14,
     "details": {
-      "materials": "Composition, construction and origin will be confirmed with the final product specifications. Images are supplied design studies.",
-      "fit": "One-size design preview. Dimensions, capacity and strap measurements are pending.",
+      "materials": "Composition, construction and origin will be confirmed with the final product specifications.",
+      "fit": "Dimensions, capacity and strap measurements will be confirmed before ordering opens.",
       "care": "Care instructions will be supplied with the approved materials and finished product.",
       "shipping": "Delivery and returns details will be confirmed before purchasing opens."
     },
@@ -393,12 +393,12 @@ export const bagProducts:Product[]=[
   {
     "id": "arc-bag",
     "slug": "arc-bag",
-    "name": "DD Arc Satchel",
+    "name": "Arc Satchel",
     "category": "bags",
     "collection": "the-bags-edit",
     "price": 15000,
     "currency": "USD",
-    "description": "A softly arched top-handle shape with a curved front panel. Working name and supplied design imagery; final product details are pending.",
+    "description": "A softly arched top-handle shape with a curved front panel. ",
     "image": {
       "src": "/assets/bag-arc-burgundy.png",
       "width": 1402,
@@ -411,7 +411,7 @@ export const bagProducts:Product[]=[
     "photos": [
       {
         "color": "burgundy",
-        "label": "Burgundy / design view 1",
+        "label": "Burgundy / view 1",
         "image": {
           "src": "/assets/bag-arc-burgundy.png",
           "width": 1402,
@@ -435,8 +435,8 @@ export const bagProducts:Product[]=[
     "rank": 15,
     "introduced": 15,
     "details": {
-      "materials": "Composition, construction and origin will be confirmed with the final product specifications. Images are supplied design studies.",
-      "fit": "One-size design preview. Dimensions, capacity and strap measurements are pending.",
+      "materials": "Composition, construction and origin will be confirmed with the final product specifications.",
+      "fit": "Dimensions, capacity and strap measurements will be confirmed before ordering opens.",
       "care": "Care instructions will be supplied with the approved materials and finished product.",
       "shipping": "Delivery and returns details will be confirmed before purchasing opens."
     },
@@ -445,12 +445,12 @@ export const bagProducts:Product[]=[
   {
     "id": "circle-bag",
     "slug": "circle-bag",
-    "name": "DD Circle",
+    "name": "Circle",
     "category": "bags",
     "collection": "the-bags-edit",
     "price": 16500,
     "currency": "USD",
-    "description": "A rounded silhouette with overlapping circular panels and warm metallic accents. Working name and supplied design imagery; final product details are pending.",
+    "description": "A rounded silhouette with overlapping circular panels and warm metallic accents. ",
     "image": {
       "src": "/assets/bag-circle-denim.png",
       "width": 1402,
@@ -463,7 +463,7 @@ export const bagProducts:Product[]=[
     "photos": [
       {
         "color": "denim",
-        "label": "Denim blue / design view 1",
+        "label": "Denim blue / view 1",
         "image": {
           "src": "/assets/bag-circle-denim.png",
           "width": 1402,
@@ -487,8 +487,8 @@ export const bagProducts:Product[]=[
     "rank": 16,
     "introduced": 16,
     "details": {
-      "materials": "Composition, construction and origin will be confirmed with the final product specifications. Images are supplied design studies.",
-      "fit": "One-size design preview. Dimensions, capacity and strap measurements are pending.",
+      "materials": "Composition, construction and origin will be confirmed with the final product specifications.",
+      "fit": "Dimensions, capacity and strap measurements will be confirmed before ordering opens.",
       "care": "Care instructions will be supplied with the approved materials and finished product.",
       "shipping": "Delivery and returns details will be confirmed before purchasing opens."
     },
@@ -497,12 +497,12 @@ export const bagProducts:Product[]=[
   {
     "id": "portrait-bag",
     "slug": "portrait-bag",
-    "name": "DD Portrait",
+    "name": "Portrait",
     "category": "bags",
     "collection": "the-bags-edit",
     "price": 16000,
     "currency": "USD",
-    "description": "An upright oval-panel silhouette, a rounded handle and compact proportions. Working name and supplied design imagery; final product details are pending.",
+    "description": "An upright oval-panel silhouette, a rounded handle and compact proportions. ",
     "image": {
       "src": "/assets/bag-portrait-duo.png",
       "width": 1402,
@@ -515,7 +515,7 @@ export const bagProducts:Product[]=[
     "photos": [
       {
         "color": "burgundy",
-        "label": "Burgundy / design view 1",
+        "label": "Burgundy / view 1",
         "image": {
           "src": "/assets/bag-portrait-duo.png",
           "width": 1402,
@@ -528,7 +528,7 @@ export const bagProducts:Product[]=[
       },
       {
         "color": "denim",
-        "label": "Denim blue / design view 1",
+        "label": "Denim blue / view 1",
         "image": {
           "src": "/assets/bag-portrait-duo.png",
           "width": 1402,
@@ -557,8 +557,8 @@ export const bagProducts:Product[]=[
     "rank": 17,
     "introduced": 17,
     "details": {
-      "materials": "Composition, construction and origin will be confirmed with the final product specifications. Images are supplied design studies.",
-      "fit": "One-size design preview. Dimensions, capacity and strap measurements are pending.",
+      "materials": "Composition, construction and origin will be confirmed with the final product specifications.",
+      "fit": "Dimensions, capacity and strap measurements will be confirmed before ordering opens.",
       "care": "Care instructions will be supplied with the approved materials and finished product.",
       "shipping": "Delivery and returns details will be confirmed before purchasing opens."
     },

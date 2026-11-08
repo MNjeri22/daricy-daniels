@@ -15,9 +15,33 @@
 
 /* Keep customer sign-in visible at every header breakpoint. */
 .account-button{gap:7px;font-size:10px;white-space:nowrap}.account-label{letter-spacing:.04em}
-@media(max-width:600px){.site-header>.brand>span:last-child{display:none}}
+
 @media(max-width:1000px){.site-header .desktop-nav{display:none}.site-header .mobile-menu-trigger{display:inline-flex}.site-header>.brand{margin-right:auto}}
 
 /* Social profiles shared by the storefront footer. */
 .footer-social{margin-top:22px;flex-shrink:0}.footer-social-links{display:flex;gap:10px;flex-wrap:wrap}.footer-social-links a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #f8f4ed60;color:var(--on-primary)}.footer-social-links a:hover{background:var(--on-primary);color:var(--primary)}.footer-social>p{margin-top:10px;font-size:10px;letter-spacing:.06em;color:var(--on-primary)}
 @media(min-width:701px) and (max-width:850px){.footer-social{margin-top:0}}
+
+/* Persistent navigation and clear controls at every screen size. */
+:root{--store-nav-height:86px}html{scroll-padding-top:calc(var(--store-nav-height) + 20px)}
+.site-header,.checkout-header{position:sticky;top:0;z-index:40}
+.catalog-filters{top:calc(var(--store-nav-height) + 20px)}
+@media(max-width:1100px){.site-header .desktop-nav{display:none}.site-header .mobile-menu-trigger{display:inline-flex}.site-header>.brand{margin-right:auto}}
+@media(max-width:700px){
+ :root{--store-nav-height:124px}
+ .site-header{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:6px 8px;padding:10px 12px 12px}
+ .site-header>.mobile-menu-trigger{grid-column:1;grid-row:1;margin:0;width:44px;height:44px;border:1px solid #f8f4ed55}
+ .site-header>.brand{grid-column:2;grid-row:1;justify-self:center;margin:0;font-size:12px;letter-spacing:.1em;gap:8px;min-width:0}
+ .site-header>.brand>span:last-child{display:inline}.site-header .brand-symbol{width:28px}
+ .site-header .header-tools{grid-column:1/-1;grid-row:2;display:flex;align-items:center;justify-content:flex-end;gap:6px;min-width:0;width:100%}
+ .site-header .currency-switch{margin-right:auto}.site-header .currency-switch select{width:88px;max-width:88px;min-height:44px;font-size:9px;padding:8px 5px;border-color:#f8f4ed70}
+ .site-header .header-tools .icon-button,.site-header .header-tools .wishlist-button,.site-header .header-tools>a[aria-label="Search the shop"]{display:inline-flex;flex:0 0 44px;width:44px;min-width:44px;height:44px;padding:10px;border:1px solid #f8f4ed55}
+ .site-header .account-label{display:none}.site-header .bag-zero{display:block;position:absolute;right:4px;top:1px;font-size:8px;margin:0}
+ .mobile-navigation{padding:22px;overflow-y:auto}.mobile-navigation .dialog-head{gap:12px;margin-bottom:15px}.mobile-navigation .brand{font-size:12px;gap:8px}.mobile-navigation .brand-symbol{width:29px}
+ .mobile-navigation nav>a{font-size:24px;line-height:1.25;padding:14px 0}.mobile-navigation nav svg{width:16px}
+ .mobile-navigation .mobile-secondary{font-size:11px;gap:16px}.mobile-navigation .icon-button{border:1px solid var(--border);flex-shrink:0}
+ .checkout-header{gap:12px;flex-wrap:wrap}.checkout-header .brand{font-size:11px}
+}
+@media(max-width:340px){.site-header>.brand{font-size:11px;gap:6px;letter-spacing:.07em}.site-header .header-tools{gap:5px}.site-header .currency-switch select{width:84px;max-width:84px}}
+
+@media(max-width:700px){.look-arrow{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:44px;min-height:44px;border:1px solid var(--border)}}
