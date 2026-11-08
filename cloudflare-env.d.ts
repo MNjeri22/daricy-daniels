@@ -5,6 +5,9 @@ declare namespace Cloudflare {
     COMMERCE_BRIDGE_SECRET?: string;
     CUSTOMER_APP_ORIGIN?: string;
     RESEND_API_KEY?: string;
+    NEWSLETTER_MODE?: string;
+    NEWSLETTER_EMAIL_FROM?: string;
+    NEWSLETTER_SEGMENT_ID?: string;
     CUSTOMER_EMAIL_FROM?: string;
     MEDUSA_BACKEND_URL?: string;
     MEDUSA_PUBLISHABLE_KEY?: string;
