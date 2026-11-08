@@ -38,8 +38,8 @@ export function setupWishlist(root = document) {
     button.addEventListener('click', () => {
       const saved = button.getAttribute('aria-pressed') !== 'true';
       button.setAttribute('aria-pressed', String(saved));
-      button.setAttribute('aria-label', saved ? 'Remove sample piece from wishlist' : 'Save sample piece to wishlist');
-      announce(saved ? 'Sample piece saved for this preview.' : 'Sample piece removed.');
+      button.setAttribute('aria-label', saved ? 'Remove piece from wishlist' : 'Save piece to wishlist');
+      announce(saved ? 'Piece saved.' : 'Piece removed.');
     });
   });
 }
