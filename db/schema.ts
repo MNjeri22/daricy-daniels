@@ -21,3 +21,10 @@ export const customerAddresses=sqliteTable('customer_addresses',{
 export const customerOrders=sqliteTable('customer_orders',{
  id:text('id').primaryKey(),customerId:text('customer_id').notNull().references(()=>customers.id,{onDelete:'cascade'}),payload:text('payload').notNull(),placedAt:integer('placed_at').notNull(),
 });
+
+// Newsletter confirmation receipts; campaign eligibility and unsubscribes live in Resend.
+export const newsletterCooldowns=sqliteTable('newsletter_cooldowns',{emailHash:text('email_hash').primaryKey(),requestedAt:integer('requested_at').notNull()});
+export const newsletterRequests=sqliteTable('newsletter_requests',{
+ tokenHash:text('token_hash').primaryKey(),email:text('email').notNull(),consentVersion:text('consent_version').notNull(),createdAt:integer('created_at').notNull(),expiresAt:integer('expires_at').notNull(),
+ claimId:text('claim_id'),claimUntil:integer('claim_until'),confirmedAt:integer('confirmed_at'),result:text('result'),
+});
