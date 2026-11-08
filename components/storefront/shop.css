@@ -4,4 +4,4 @@
 /* Keep source panel proportions intact; only bottom edges may crop. */
 .catalog-image>img{object-fit:initial}.catalog-quick .catalog-image{height:auto;aspect-ratio:3/4;min-height:0}.catalog-quick .look-dialog-grid{align-items:start;background:var(--surface)}.catalog-quick .look-dialog-copy{background:var(--background)}
 
-.catalog-image.supplied-bag-image{aspect-ratio:3/4;background:#e5d8c7}.supplied-bag-image>svg{display:block;width:100%;height:100%;position:absolute;inset:0;overflow:hidden}.catalog-quick .supplied-bag-image{height:auto;aspect-ratio:3/4;min-height:0}
+.catalog-image.contained-product-image{aspect-ratio:3/4;background:#e5d8c7}.contained-product-image>svg{display:block;width:100%;height:100%;position:absolute;inset:0;overflow:hidden}.catalog-quick .contained-product-image{height:auto;aspect-ratio:3/4;min-height:0}
