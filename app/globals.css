@@ -17,3 +17,7 @@
 .account-button{gap:7px;font-size:10px;white-space:nowrap}.account-label{letter-spacing:.04em}
 @media(max-width:600px){.site-header>.brand>span:last-child{display:none}}
 @media(max-width:1000px){.site-header .desktop-nav{display:none}.site-header .mobile-menu-trigger{display:inline-flex}.site-header>.brand{margin-right:auto}}
+
+/* Social profiles shared by the storefront footer. */
+.footer-social{margin-top:22px;flex-shrink:0}.footer-social-links{display:flex;gap:10px;flex-wrap:wrap}.footer-social-links a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #f8f4ed60;color:var(--on-primary)}.footer-social-links a:hover{background:var(--on-primary);color:var(--primary)}.footer-social>p{margin-top:10px;font-size:10px;letter-spacing:.06em;color:var(--on-primary)}
+@media(min-width:701px) and (max-width:850px){.footer-social{margin-top:0}}
