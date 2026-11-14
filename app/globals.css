@@ -93,3 +93,12 @@ html:has(.look-dialog[open]),body:has(.look-dialog[open]){overflow:hidden}
  .mobile-navigation .mobile-secondary svg{width:17px;height:17px}
  .mobile-navigation .dialog-head .icon-button{border:0;flex-shrink:0}
 }
+
+/* Warm neutrals balance the burgundy navigation and campaign imagery. */
+.campaign-hero{background:var(--background);color:var(--text)}
+.campaign-copy .eyebrow.light,.campaign-copy h1 em{color:var(--primary)}
+.campaign-copy .campaign-description,.campaign-copy .hero-footnote{color:var(--muted)}
+.campaign-copy .button-cream{background:var(--primary);border-color:var(--primary);color:var(--on-primary)}
+.campaign-copy .button-cream:hover{background:var(--primary-hover);border-color:var(--primary-hover)}
+.campaign-copy>.text-link.light{color:var(--primary);border-color:var(--primary)}
+.campaign-hero :focus-visible{outline-color:var(--primary)}
