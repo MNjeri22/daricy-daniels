@@ -66,3 +66,30 @@ html:has(.look-dialog[open]),body:has(.look-dialog[open]){overflow:hidden}
  .look-dialog-copy .quick-secondary-links{display:flex;gap:18px;margin-top:18px}
  .look-dialog-copy .quick-secondary-links .text-link{font-size:10px;min-height:44px;display:inline-flex;align-items:center}
 }
+
+/* Compact navigation keeps the brand and bag in one row. */
+.announcement-short{display:none}
+.mobile-currency{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 0;border-top:1px solid var(--border);font-size:11px}
+.mobile-currency .currency-switch select{min-height:44px;width:110px;max-width:110px;font-size:11px;padding:10px;border-color:var(--control-border)}
+@media(max-width:1100px){
+ :root{--store-nav-height:64px}
+ .announcement{padding:5px 16px;font-size:8px;letter-spacing:.13em}
+ .announcement-full{display:none}.announcement-short{display:inline}
+ .site-header{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;align-items:center;gap:8px;padding:10px 12px}
+ .site-header>.mobile-menu-trigger{grid-column:1;grid-row:1;display:inline-flex;margin:0;width:44px;height:44px;min-width:44px;border:0;padding:10px}
+ .site-header>.brand{grid-column:2;grid-row:1;justify-self:center;margin:0;font-size:12px;letter-spacing:.08em;gap:8px;min-width:0}
+ .site-header>.brand>span:last-child{display:inline}.site-header .brand-symbol{width:28px}
+ .site-header .header-tools{grid-column:3;grid-row:1;display:flex;justify-content:center;gap:0;width:44px;min-width:0}
+ .site-header .header-tools>.currency-switch,.site-header .header-tools>.icon-button:not(.header-bag-button){display:none}
+ .site-header .header-tools>.header-bag-button{display:inline-flex;flex:0 0 44px;width:44px;height:44px;min-width:44px;padding:10px;border:0}
+ .site-header .bag-zero{display:block;position:absolute;right:2px;top:1px;font-size:8px;margin:0}
+ .mobile-navigation{padding:22px 24px;overflow-y:auto;overscroll-behavior:contain}
+ .mobile-navigation .dialog-head{gap:12px;margin-bottom:14px}
+ .mobile-navigation .brand{font-size:12px;gap:8px}.mobile-navigation .brand-symbol{width:28px}
+ .mobile-navigation nav>a{font-size:22px;line-height:1.3;padding:10px 0;min-height:48px}
+ .mobile-navigation nav svg{width:16px}
+ .mobile-navigation .mobile-secondary{display:flex;flex-direction:column;gap:0;margin:20px 0;padding-top:16px;border-top:1px solid var(--border)}
+ .mobile-navigation .mobile-secondary>a{display:flex;align-items:center;gap:12px;min-height:44px;font-size:12px;padding:8px 0}
+ .mobile-navigation .mobile-secondary svg{width:17px;height:17px}
+ .mobile-navigation .dialog-head .icon-button{border:0;flex-shrink:0}
+}
